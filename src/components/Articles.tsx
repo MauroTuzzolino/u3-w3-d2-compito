@@ -22,11 +22,11 @@ const Articles: React.FC = () => {
 
   // Uso useEffect per caricare i dati al montaggio del componente
   useEffect(() => {
-    fetch("https://api.spaceflightnewsapi.net/v4/articles?limit=12") // carico fino a 30 articoli
+    fetch("https://api.spaceflightnewsapi.net/v4/articles?limit=8")
       .then((res) => res.json())
       .then((data) => {
-        setArticles(data.results); // salvo gli articoli nello stato
-        setLoading(false); // disattivo il caricamento
+        setArticles(data.results);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Errore nel caricamento degli articoli:", err);
@@ -49,9 +49,7 @@ const Articles: React.FC = () => {
       <Row className="g-4">
         {articles.map((article) => (
           <Col key={article.id} xs={12} sm={6} md={4} lg={3}>
-            {/* Ogni card è cliccabile: reindirizza alla pagina dettaglio */}
             <Card className="h-100 clickable shadow-sm" onClick={() => navigate(`/details/${article.id}`)} style={{ cursor: "pointer" }}>
-              {/* Immagine di copertina con altezza fissa e ritaglio */}
               <Card.Img variant="top" src={article.image_url} alt={article.title} style={{ height: "180px", objectFit: "cover" }} />
               <Card.Body className="d-flex flex-column">
                 <Card.Title>{article.title}</Card.Title>
