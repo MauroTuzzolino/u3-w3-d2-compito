@@ -22,7 +22,7 @@ const Articles: React.FC = () => {
 
   // Uso useEffect per caricare i dati al montaggio del componente
   useEffect(() => {
-    fetch("https://api.spaceflightnewsapi.net/v4/articles?limit=30") // carico fino a 30 articoli
+    fetch("https://api.spaceflightnewsapi.net/v4/articles?limit=12") // carico fino a 30 articoli
       .then((res) => res.json())
       .then((data) => {
         setArticles(data.results); // salvo gli articoli nello stato
