@@ -1,10 +1,18 @@
 import React from "react";
-import AppNavbar from "./components/NavBar";
+import CustomNavbar from "./components/NavBar";
+import Footer from "./components/Footer";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <AppNavbar />
+    <div className="d-flex flex-column min-vh-100">
+      <CustomNavbar />
+
+      <main className="container my-4">
+        <h1>Benvenuto su OrbitalNow</h1>
+      </main>
+
+      <Footer />
     </div>
   );
 };

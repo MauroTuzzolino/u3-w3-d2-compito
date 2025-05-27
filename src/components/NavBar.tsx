@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
-const AppNavbar: React.FC = () => {
+const CustomNavbar: React.FC = () => {
   return (
     <Navbar className="px-4" bg="dark" variant="dark" expand="lg">
       <Navbar.Brand href="#">🚀 OrbitalNow</Navbar.Brand>
@@ -19,4 +19,4 @@ const AppNavbar: React.FC = () => {
   );
 };
 
-export default AppNavbar;
+export default CustomNavbar;
